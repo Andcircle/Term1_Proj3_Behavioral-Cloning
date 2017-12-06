@@ -58,7 +58,7 @@ def generator(samples, batch_size=32):
             for batch_sample in batch_samples:
                 
                 steering_center = float(batch_sample[3])
-                correction = 0.25 # this is a parameter to tune
+                correction = 0.2 # this is a parameter to tune
                 steering_left = steering_center + correction
                 steering_right = steering_center - correction
                 
@@ -71,6 +71,7 @@ def generator(samples, batch_size=32):
                 i=np.random.randint(3)
                 
                 image = np.asarray(cv2.imread(img_temp[i]))
+                image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
                 angle = steering_temp[i] 
                 
                 image = random_brightness(image)
