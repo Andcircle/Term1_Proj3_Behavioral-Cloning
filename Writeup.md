@@ -18,6 +18,10 @@ The goals / steps of this project are the following:
 [image2]: ./pic/Flip.png "Flipped Image"
 [image3]: ./pic/Brightness.png "Brightness Argumented Image"
 [image4]: ./pic/RGB.png "RGB Argumented Image"
+[image5]: ./pic/center.png
+[image6]: ./pic/left.png
+[image7]: ./pic/right.png
+
 
 
 ## Rubric Points
@@ -38,7 +42,7 @@ My project includes the following files:
 #### 2. Submission includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
 ```sh
-python drive.py model.h5
+python drive.py model_lz_nv1_v1_ok.h5
 ```
 
 #### 3. Submission code is usable and readable
@@ -107,6 +111,9 @@ First, I used original data sample, the training result is fine, but I can't mak
 
 In order to improve training result with minimum dataset, I did following things:
 1. During training, I used all the left, center, right cameras
+![alt text][image5]
+![alt text][image6]
+![alt text][image7]
 2. I randomly fliped the image in training dataset, and changed brightness (HSV), RGB color. During this process generator is a very powerful tool, because it can keep changing the traing data in each training epoch.
 ![alt text][image1]
 ![alt text][image2]
