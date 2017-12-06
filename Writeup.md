@@ -36,7 +36,7 @@ My project includes the following files:
 * nv_model_github.py containing the script to create and train the model
 * nv_generator_github.py containing the script to create the training data
 * drive.py for driving the car in autonomous mode
-* nv_model_github.h5 containing a trained convolution neural network 
+* model_lz_nv1_v1_ok.h5 containing a trained convolution neural network 
 * writeup_report.md or writeup_report.pdf summarizing the results
 
 #### 2. Submission includes functional code
