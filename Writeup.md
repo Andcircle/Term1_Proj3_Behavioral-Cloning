@@ -115,6 +115,7 @@ In order to improve training result with minimum dataset, I did following things
 ![alt text][image5]
 ![alt text][image6]
 ![alt text][image7]
+
 2. I randomly fliped the image in training dataset, and changed brightness (HSV), RGB color. During this process generator is a very powerful tool, because it can keep changing the traing data in each training epoch.
 
 ![alt text][image1]
