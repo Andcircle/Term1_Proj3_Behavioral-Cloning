@@ -14,13 +14,11 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/placeholder.png "Model Visualization"
-[image2]: ./examples/placeholder.png "Grayscaling"
-[image3]: ./examples/placeholder_small.png "Recovery Image"
-[image4]: ./examples/placeholder_small.png "Recovery Image"
-[image5]: ./examples/placeholder_small.png "Recovery Image"
-[image6]: ./examples/placeholder_small.png "Normal Image"
-[image7]: ./examples/placeholder_small.png "Flipped Image"
+[image1]: ./pic/Original.png "Original Image"
+[image2]: ./pic/Flip.png "Flipped Image"
+[image3]: ./pic/Brightness.png "Brightness Argumented Image"
+[image4]: ./pic/RGB.png "RGB Argumented Image"
+
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
@@ -110,6 +108,10 @@ First, I used original data sample, the training result is fine, but I can't mak
 In order to improve training result with minimum dataset, I did following things:
 1. During training, I used all the left, center, right cameras
 2. I randomly fliped the image in training dataset, and changed brightness (HSV), RGB color. During this process generator is a very powerful tool, because it can keep changing the traing data in each training epoch.
+![alt text][image1]
+![alt text][image2]
+![alt text][image3]
+![alt text][image4]
 
 ### Next Step
 1. Fine tune the training dataset to reduce the recovery data fraction
