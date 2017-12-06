@@ -105,28 +105,12 @@ So I start from the Nvidia CNN, but in order to prevent overfitting one dropout 
 
 #### 2. Creation of the Training Set & Training Process
 
-To capture good driving behavior, I first recorded two laps on track one using center lane driving. Here is an example image of center lane driving:
+First, I used original data sample, the training result is fine, but I can't make the whole lap, so I added my own training data set. I did one dataset for center driving, one dataset for off centerline recovery. The final result turns out to be OK, but the recovery dataset maybe too big, so the vehicle will keep driving off center line and then recovering. The performance can be improved by fine tune the dataset.
 
-![alt text][image2]
+In order to improve training result with minimum dataset, I did following things:
+1. During training, I used all the left, center, right cameras
+2. I randomly fliped the image in training dataset, and changed brightness (HSV), RGB color. During this process generator is a very powerful tool, because it can keep changing the traing data in each training epoch.
 
-I then recorded the vehicle recovering from the left side and right sides of the road back to center so that the vehicle would learn to .... These images show what a recovery looks like starting from ... :
-
-![alt text][image3]
-![alt text][image4]
-![alt text][image5]
-
-Then I repeated this process on track two in order to get more data points.
-
-To augment the data sat, I also flipped images and angles thinking that this would ... For example, here is an image that has then been flipped:
-
-![alt text][image6]
-![alt text][image7]
-
-Etc ....
-
-After the collection process, I had X number of data points. I then preprocessed this data by ...
-
-
-I finally randomly shuffled the data set and put Y% of the data into a validation set. 
-
-I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was Z as evidenced by ... I used an adam optimizer so that manually training the learning rate wasn't necessary.
+### Next Step
+1. Fine tune the training dataset to reduce the recovery data fraction
+2. More training data argumentation, e.g. image rotation, image shift, to make the model more robust
