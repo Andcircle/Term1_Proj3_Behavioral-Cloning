@@ -96,7 +96,6 @@ The model used an adam optimizer, so the learning rate is set to 0.0001
 #### 4. Appropriate training data
 
 Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, recovering from the left and right sides of the road ... 
-But, I believe in my dataset, I use too many recovering data, that's why in the final test (in the video), the car will keep driving off the center line and recovering back. In order to get better performance, the dataset shoule be fine tuned.
 
 ### Model Architecture and Training Strategy
 
@@ -107,7 +106,9 @@ So I start from the Nvidia CNN, but in order to prevent overfitting one dropout 
 
 #### 2. Creation of the Training Set & Training Process
 
-First, I used original data sample, the training result is fine, but I can't make the whole lap, so I added my own training data set. I did one dataset for center driving, one dataset for off centerline recovery. The final result turns out to be OK, but the recovery dataset maybe too big, so the vehicle will keep driving off center line and then recovering. The performance can be improved by fine tune the dataset.
+First, I used original data sample, the training result is fine, but I can't make the whole lap, so I added my own training data set. I did one dataset for center driving, one dataset for off centerline recovery. The final result turns out to be OK.
+
+In my first submission, I made a mistake that, cv2.imread() actually returns BGR format, I have to change it to RGB using cv2.cvtColor(image, cv2.COLOR_BGR2RGB). After that, the training results is much better.
 
 In order to improve training result with minimum dataset, I did following things:
 1. During training, I used all the left, center, right cameras
